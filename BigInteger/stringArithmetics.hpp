@@ -86,6 +86,10 @@ string substract(string num1,string num2){
             sub=10+d1-d2-borrow;
             borrow=1;
         }
+        else if(d1==d2 && borrow==1){
+            sub=10+d1-d2-borrow;
+            borrow=1;
+        }
         else{
             sub=d1-d2-borrow;
             borrow=0;
