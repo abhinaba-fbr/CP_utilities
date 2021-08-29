@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include "CSIConversions.hpp"
 #include "stringArithmetics.hpp"
-#define MAX_BIGLENGTH 2
+#define MAX_BIGLENGTH 100
 using namespace std;
 
 
@@ -94,7 +94,10 @@ BigInteger::BigInteger(int n){
     else
         this->sign='+';
     this->number=itos(n);
-    this->magnitude=itos(abs(n));
+    if(this->sign=='-')
+        this->magnitude=this->number(1,this->number.length()-1);
+    else
+        this->magnitude=this->number;
 }
 
 BigInteger::BigInteger(const BigInteger& B){
@@ -170,7 +173,10 @@ void BigInteger::initialize(int n){
     else
         this->sign='+';
     this->number=itos(n);
-    this->magnitude=itos(abs(n));    
+    if(this->sign=='-')
+        this->magnitude=this->number(1,this->number.length()-1);
+    else
+        this->magnitude=this->number;   
 }
 
 bool BigInteger::operator==(BigInteger b2){
