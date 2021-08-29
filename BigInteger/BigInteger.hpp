@@ -95,7 +95,7 @@ BigInteger::BigInteger(int n){
         this->sign='+';
     this->number=itos(n);
     if(this->sign=='-')
-        this->magnitude=this->number(1,this->number.length()-1);
+        this->magnitude=this->number.substr(1,this->number.length()-1);
     else
         this->magnitude=this->number;
 }
@@ -174,7 +174,7 @@ void BigInteger::initialize(int n){
         this->sign='+';
     this->number=itos(n);
     if(this->sign=='-')
-        this->magnitude=this->number(1,this->number.length()-1);
+        this->magnitude=this->number.substr(1,this->number.length()-1);
     else
         this->magnitude=this->number;   
 }
